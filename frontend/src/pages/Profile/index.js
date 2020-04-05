@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiPower, FiTrash2 } from "react-icons/fi";
+import { ThemeContext } from "styled-components";
 
 import api from "../../services/api";
 
-import "./styles.css";
-
-import logoImg from "../../assets/logo.svg";
+//import { Button } from '../../styles/global';
+import { Container, Header, Ul } from "./styles";
 
 export default function Profile() {
   const [incidents, setIncidents] = useState([]);
@@ -20,10 +20,10 @@ export default function Profile() {
     api
       .get("profile", {
         headers: {
-          Authorization: ongId
-        }
+          Authorization: ongId,
+        },
       })
-      .then(response => {
+      .then((response) => {
         setIncidents(response.data);
       });
   }, [ongId]);
@@ -32,11 +32,11 @@ export default function Profile() {
     try {
       await api.delete(`incidents/${id}`, {
         headers: {
-          Authorization: ongId
-        }
+          Authorization: ongId,
+        },
       });
 
-      setIncidents(incidents.filter(incident => incident.id !== id));
+      setIncidents(incidents.filter((incident) => incident.id !== id));
     } catch (error) {
       alert("Erro ao deletar caso. Tente novamente.");
     }
@@ -48,24 +48,23 @@ export default function Profile() {
     history.push("/");
   }
 
-  return (
-    <div className="profile-container">
-      <header>
-        <img src={logoImg} alt="Be The Hero" />
-        <span>Bem vinda, {ongName}.</span>
+  const { logo } = useContext(ThemeContext);
 
-        <Link className="button" to="/incidents/new">
-          Cadastrar novo caso
-        </Link>
+  return (
+    <Container>
+      <Header>
+        <img src={logo} alt="Be The Hero" />
+        <span>Bem vinda, {ongName}.</span>
+        <Link to="/incidents/new">Cadastrar novo caso</Link>
         <button onClick={handleLogOut} type="button">
           <FiPower size={18} color="#E02041" />
         </button>
-      </header>
+      </Header>
 
       <h1>Casos Cadastrados</h1>
 
-      <ul>
-        {incidents.map(incident => (
+      <Ul>
+        {incidents.map((incident) => (
           <li key={incident.id}>
             <strong>CASO:</strong>
             <p>{incident.title}</p>
@@ -77,7 +76,7 @@ export default function Profile() {
             <p>
               {Intl.NumberFormat("pt-BR", {
                 style: "currency",
-                currency: "BRL"
+                currency: "BRL",
               }).format(incident.value)}
             </p>
 
@@ -89,7 +88,7 @@ export default function Profile() {
             </button>
           </li>
         ))}
-      </ul>
-    </div>
+      </Ul>
+    </Container>
   );
 }
