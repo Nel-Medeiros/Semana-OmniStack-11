@@ -1,75 +1,54 @@
-import { StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
+import styled from "styled-components/native";
 
-export default StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingHorizontal: 24,
-        paddingTop: Constants.statusBarHeight + 20,
-    },
+export const HeaderText = styled.Text`
+  font-size: 15px;
+  color: #737380;
+`;
 
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
+export const HeaderTextBold = styled.Text`
+  font-weight: bold;
+`;
 
-    headerText: {
-        fontSize: 15,
-        color: '#737380',
-    },
+export const Title = styled.Text`
+  font-size: 30px;
+  margin-bottom: 16px;
+  margin-top: 48px;
+  color: #13131a;
+  font-weight: bold;
+`;
 
-    headerTextBold: {
-        fontWeight: 'bold',
-    },
+export const Description = styled.Text`
+  font-size: 16px;
+  line-height: 24px;
+  color: #737380;
+`;
 
-    title: {
-        fontSize: 30,
-        marginBottom: 16,
-        marginTop: 48,
-        color: '#13131a',
-        fontWeight: 'bold',
-    },
+export const IncidentList = styled.FlatList`
+  margin-top: 32px;
+`;
 
-    description: {
-        fontSize: 16,
-        lineHeight: 24,
-        color: '#737380',
-    },
+export const Incident = styled.View`
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 16px;
+`;
 
-    incidentList: {
-        marginTop: 32
-    },
+export const IncidentProperty = styled.Text`
+  font-size: 14px;
+  color: #41414d;
+  font-weight: bold;
+`;
 
-    incident: {
-        padding: 24,
-        borderRadius: 8,
-        backgroundColor: '#fff',
-        marginBottom: 16,
-    },
+export const IncidentValue = styled.Text`
+  margin-top: 8px;
+  font-size: 15px;
+  margin-bottom: 24px;
+  color: #737380;
+`;
 
-    incidentProperty: {
-        fontSize: 14,
-        color: '#41414d',
-        fontWeight: 'bold',
-    },
-
-    incidentValue: {
-        marginTop: 8,
-        fontSize: 15,
-        marginBottom: 24,
-        color: '#737380',
-    },
-
-    detailsButton: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-
-    detailsButtonText: {
-        color: '#e02041',
-        fontSize: 15,
-        fontWeight: 'bold',
-    },
-});
+export const DetailsButtonText = styled.Text`
+  color: #e02041;
+  font-size: 15px;
+  font-weight: bold;
+`;
