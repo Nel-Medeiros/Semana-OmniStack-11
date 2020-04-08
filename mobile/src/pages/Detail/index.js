@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Image, Linking, ScrollView } from "react-native";
 import * as MailComposer from "expo-mail-composer";
+import { ThemeContext } from 'styled-components/native';
 
 import logoImg from "../../assets/logo.png";
 
@@ -52,10 +53,12 @@ export default function Detail() {
     );
   }
 
+  const { logo } = useContext(ThemeContext)
+
   return (
     <Container>
       <Header>
-        <Image source={logoImg} />
+        <Image source={logo} />
 
         <ButtonTouch onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#e82041" />
