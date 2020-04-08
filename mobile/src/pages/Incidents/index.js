@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { Image } from "react-native";
+import { Image, Switch } from "react-native";
+import { ThemeContext } from 'styled-components/native';
 
 import api from "../../services/api";
 
@@ -21,7 +22,13 @@ import {
   DetailsButtonText,
 } from "./styles";
 
+import { useStateValue } from '../../state/ContextProvider'
+
 export default function Incidents() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  //const [, dispach] = useStateValue();
+
   const [incidents, setIncidents] = useState([]);
   const [total, setTotal] = useState(0);
 
@@ -29,6 +36,14 @@ export default function Incidents() {
   const [loading, setLoading] = useState(false);
 
   const navigation = useNavigation();
+
+  // function handleChange(){
+  //   dispach({
+  //     type: !darkMode ? 'enableDarkMode' : 'disableDarkMode'
+  //   });
+
+  //   setDarkMode(!darkMode)
+  // }
 
   function navigateToDetail(incident) {
     navigation.navigate("Detail", { incident });
@@ -60,10 +75,18 @@ export default function Incidents() {
     loadIncidents();
   }, []);
 
+  const { logo } = useContext(ThemeContext)
+
   return (
     <Container>
+      {/* <Switch
+        value={darkMode}
+        onValueChange={handleChange}
+        thumbColor="#424242"
+        trackColor="#292929"
+      /> */}
       <Header>
-        <Image source={logoImg} />
+        <Image source={logo} />
         <HeaderText>
           Total de <HeaderTextBold>{total} casos</HeaderTextBold>
         </HeaderText>
