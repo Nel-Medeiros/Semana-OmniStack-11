@@ -15,7 +15,7 @@ Be The Hero
 </p>
 
 <div>
-  <img src="https://i.ibb.co/NFCw4XY/Omni11-Web-Gif.gif" alt="Omni11-Web-Gif" height="425" width="500">
+  <img src="https://i.ibb.co/NFCw4XY/Omni11-Web-Gif.gif" alt="Omni11-Web-Gif" height="425" width="700">
   <img src="https://i.ibb.co/tcLN0qz/Omni11-Mobile-Gif.gif" alt="Omni11-Mobile-Gif" height="425">
 </div>
 
