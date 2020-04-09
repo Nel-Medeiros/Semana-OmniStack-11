@@ -27,7 +27,7 @@ This app features all the latest tools and practices in mobile development!
 
 - ⚛️ **React Js** — A JavaScript library for building user interfaces
 - ⚛️ **React Native** — A lib that provides a way to create native apps for Android and iOS
-- 💹 **Node Js** — A web framework for Node Js
+- 💹 **Node Js** — A JavaScript runtime built on Chrome's V8 JavaScript engine
 - 💿 **SQLite** — A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.
 <br>
 
@@ -38,7 +38,7 @@ This app features all the latest tools and practices in mobile development!
 - 🔀 **Express** — Micro-framework ho deals with the app routes;
 - 📞 **Axios** — HTTP Client ho makes API calls;
 - 📐 **EsLint** — Code patterns;
-- ✨ **Styled Components** — Allow you to write plain and scoped CSS in your components without worrying about class name collisions.;
+- ✨ **Styled Components** — Allow you to write plain and scoped CSS in your components without worrying about class name collisions.
 
 
 ## Getting started
